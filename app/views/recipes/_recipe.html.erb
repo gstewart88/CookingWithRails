@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li><%= recipe.title %>
+    <li><%= link_to("Show #{recipe.title}", recipe_path(recipe)) %></li>
+    <li><%= button_to('Delete Recipe', recipe_path(recipe), method: :delete, data:{confirm: "Delete Them? Are you sure?"}) %></li>
+    <li><%= link_to("Edit Recipe", edit_recipe_path(recipe)) %></li>
+  </ul>
+</nav>
+<br>
