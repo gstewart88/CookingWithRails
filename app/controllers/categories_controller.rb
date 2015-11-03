@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category.destroy
+    @category.destroy
     redirect_to(categories_path)
   end
 
@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category.update(category_params) 
+    @category.update(category_params) 
     redirect_to(categories_path)
   end
 
@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
   def set_category
     @category = Category.find(params[:id])
   end
-  
+
   def category_params
     params.require(:category).permit(:name)
   end

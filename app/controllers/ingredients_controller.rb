@@ -19,7 +19,7 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
-    ingredient.destroy
+    @ingredient.destroy
     redirect_to(ingredients_path)
   end
 
@@ -27,7 +27,7 @@ class IngredientsController < ApplicationController
   end
 
   def update
-    ingredient.update(ingredient_params) 
+    @ingredient.update(ingredient_params) 
     redirect_to(ingredients_path)
   end
 

@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    recipe.destroy
+    @recipe.destroy
     redirect_to(recipes_path)
   end
 
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    recipe.update(recipe_params) 
+    @recipe.update(recipe_params) 
     redirect_to(recipes_path)
   end
 
