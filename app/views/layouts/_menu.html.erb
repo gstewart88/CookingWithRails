@@ -1,8 +1,19 @@
-  <ul>
+<!--   <ul>
     <div><%= link_to('Categories', categories_path) %></div>
-    <div><%= link_to('New Category', new_category_path) %></div>
     <div><%= link_to('Recipes', recipes_path) %></div>
-    <div><%= link_to('New Recipe', new_recipe_path) %></div>
     <div><%= link_to('Ingredients', ingredients_path) %><div>
-    <div><%= link_to('New Ingredient', new_ingredient_path) %></div>
-  </ul>
+    <div><%= link_to('Quantities', quantities_path) %></div>
+  </ul> -->
+  <div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <nav>
+        <ul>
+          <li><a><%= link_to('Categories', categories_path) %></a></li>
+          <li><a><%= link_to('Recipes', recipes_path) %></a></li>
+          <li><a><%= link_to('Ingredients', ingredients_path) %></a></li>
+          <li><a><%= link_to('Quantities', quantities_path) %></a></li>
+        </ul>
+      </nav>  
+    </div> 
+  </div>

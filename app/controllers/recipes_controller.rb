@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     # allows these params to be accessed by the methods above
-    params.require(:recipe).permit(:title, :instructions, :category_id)
-  end
+      params.require(:recipe).permit(:name, :category_id, :instructions, {ingredient_ids: []})
+    end
 
-end
+  end

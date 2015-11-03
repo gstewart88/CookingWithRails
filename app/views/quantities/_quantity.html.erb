@@ -1,0 +1,7 @@
+<%= quantity.ingredient.try(:name) %>
+<%= quantity.recipe.try(:name) %>
+<%= quantity.quantity %>
+<%= link_to 'Show', quantity %>
+<%= button_to('Delete Quantity', quantity_path(quantity), method: :delete, data:{confirm: "Delete Quantity? Are you sure?"}) %>
+<%= link_to("Edit Quantity", edit_quantity_path(quantity)) %>
+<br>

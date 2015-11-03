@@ -11,5 +11,7 @@
   <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] } %>
   <br>
   <br>
+
   <%= f.submit button_text %>
 <% end %>
+
