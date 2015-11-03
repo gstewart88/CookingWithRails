@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+
   def index
     @recipes = Recipe.all
   end
@@ -14,27 +15,28 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def destroy
-    recipe = Recipe.find(params[:id])
     recipe.destroy
     redirect_to(recipes_path)
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
-    recipe = Recipe.find(params[:id]) #again - the data does not need to be exposed - no @
-    recipe.update(recipe_params) #from the private method below - whitelist check
+    recipe.update(recipe_params) 
     redirect_to(recipes_path)
   end
 
 
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
   def recipe_params
     # allows these params to be accessed by the methods above
     params.require(:recipe).permit(:title, :instructions, :category_id)
