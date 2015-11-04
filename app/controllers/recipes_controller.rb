@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     @recipes = Recipe.all
@@ -39,7 +40,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     # allows these params to be accessed by the methods above
-      params.require(:recipe).permit(:name, :category_id, :instructions, {ingredient_ids: []})
-    end
-
+    params.require(:recipe).permit(:name, :recipe_image, :category_id, :instructions, {ingredient_ids: []})
   end
+
+end

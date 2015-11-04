@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
 
   def index
     @ingredients = Ingredient.all

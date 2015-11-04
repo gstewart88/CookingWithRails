@@ -11,7 +11,10 @@
   <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] } %>
   <br>
   <br>
-
+  <div class="field">
+  <%= f.label :recipe_image %><br />
+  <%= f.file_field :recipe_image %>    
+  </div>
   <%= f.submit button_text %>
 <% end %>
 

@@ -1,7 +1,7 @@
 class QuantitiesController < ApplicationController
   before_action :set_quantity, only: [:show, :edit, :update, :destroy]
-
-
+  before_filter :authenticate_user!
+  
   def index
     @quantities = Quantity.all
   end
